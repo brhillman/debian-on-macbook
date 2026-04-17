@@ -121,11 +121,21 @@ sudo ldconfig
 ```
 Clean up old symbolic links in `/usr/lib/omnissa/horizon/pkcs11/`.
 
+## Use notes
+
 ### Setup screen locking
+Use `slock`. Just type `slock` in a terminal to lock the screen (or enter `slock` in `dmenu`). To unlock, type user password. Note that there will be no visual feedback while typing, other than screen color changes as follows:
+
+  - Black screen = locked, waiting for password input
+  - Blue screen = you pressed Enter with an incorrect password
+  - Red screen = you pressed Escape/Ctrl+U (clears the current input)
 
 ### Setup suspend/sleep
-
-## Use notes
+To suspend:
+```
+systemctl suspend
+```
+Can also add an alias to this in `~/.bashrc` if one is so inclined. Note that suspend on lid close worked out of the box for me.
 
 ### Check battery
 
