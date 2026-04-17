@@ -141,6 +141,40 @@ Can also add an alias to this in `~/.bashrc` if one is so inclined. Note that su
 
 ### Check temperature
 
+### Audio
+Install `alsa-utils`:
+```
+sudo apt install alsa-utils
+```
+Use `alsamixer` to change volume settings, or `amixer` on command line. E.g.:
+```
+amixer sset Master 80%   # Set master volume to 80%
+amixer sset Capture cap  # Enable microphone capture
+amixer sset Capture 80%  # Set microphone capture to 80%
+```
+Add keybindings for volume control by editing `~/.config/openbox/rc.xml` and adding to `<keyboard>` section:
+```
+<!-- Volume controls -->
+<keybind key="XF86AudioRaiseVolume">
+  <action name="Execute">
+    <command>amixer sset Master 5%+</command>
+  </action>
+</keybind>
+
+<keybind key="XF86AudioLowerVolume">
+  <action name="Execute">
+    <command>amixer sset Master 5%-</command>
+  </action>
+</keybind>
+
+<keybind key="XF86AudioMute">
+  <action name="Execute">
+    <command>amixer sset Master toggle</command>
+  </action>
+</keybind>
+```
+and then `openbox --reconfigure`.
+
 ### Lock screen
 
 ### Suspend/sleep
