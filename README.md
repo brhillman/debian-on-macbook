@@ -12,6 +12,9 @@ sudo apt update
 sudo apt install xorg xinit openbox dmenu xterm firefox-esr
 ```
 
+## Wifi
+install network-manager for easier connection management (avoid having to manually configure `wpa_supplicant` and use multiple tools). This provides `nmtui` and `nmcli` interfaces. 
+
 ### X + openbox configuration
 Edit `.xinitrc` and add the following:
 ```
